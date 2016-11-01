@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coffee Bean Order Form</title>
+</head>
+<body>
+<form method="post" action="http://requestb.in/yt7hshyt">
+    <h1>Irb's Beans</h1>
+        <p>Come and get Roasted</p>
+    <h3>Which side are you on?</h3>
+        <label for="coffeetype" name="coffeetype[]">
+        <input type="radio" name="coffeetypedark">The <strong>Dark</strong> Side</label>
+        <label>
+            <br>
+        <input type="radio" name="coffeetypelight">The power of the <strong>Light</strong></label>
+    <h3>Choose your quantity</h3>
+        <label for="quantity" name="quantity">
+        <input type="radio" name="quantity">Small (1lb)
+        </label>
+            <br>
+        <label for="quantity" name="quantity">
+        <input type="radio" name="quantity">Large (3lb)
+        </label>
+    <h3>Would you like to sign up for Auto Renewal?</h3>
+        <input type="checkbox" id="renewal" name="renewal" value="yes">
+        <label for="renewal">Yes I would!</label>
+    <br>
+    <h3><label for="deliverto">Delivery Address</label></h3>
+    <input type="text" id="deliverto" name="deliverto" placeholder="Enter Address Here">
+    <br>
+    <br>
+    <button>Submit</button>
+</form>
+</body>
+</html>

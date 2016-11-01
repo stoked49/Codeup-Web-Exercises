@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Form</title>
+    <style>
+        p {
+            font-weight: bold;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <form method="get" action="http://www.reddit.com/search">
+
+        <p>Reddit Search</p>
+        <label for="redditsearch">Find on Reddit: </label>
+        <input type="text" id="redditsearch" name="q" placeholder="Search">
+        <button>Fetch</button>
+    </form>
+    <form method="get" action="http://www.amazon.com/s">
+        <p>Amazon Search</p>
+        <label for="amazonsearch">Find on Amazon: </label>
+        <input type="text" id="amazonsearch" name="field-keywords" placeholder="Search">
+        <button>Go</button>
+    </form>
+</body>
+</html>

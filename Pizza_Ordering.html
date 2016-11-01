@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza Order Form</title>
+    <link href="https://fonts.googleapis.com/css?family=La+Belle+Aurore" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/pizza_ordering.css">
+</head>
+<body>
+<h1>
+    Pizza Garden
+</h1>
+<form method="post" action="http://requestb.in/yt7hshyt">
+    <p>
+        <label for="email">Email Address</label>
+        <input type="text" id="email" name="email" placeholder="Enter Email Address Here">
+    </p>
+    <h3>Select which toppings you would like on your pizza!</h3>
+    <p>
+
+        <input type="checkbox" id="toppings1" name="toppings[]" value="yes">
+        <label for="toppings1">Pepperoni</label>
+
+        <input type="checkbox" id="toppings2" name="toppings[]" value="yes">
+        <label for="toppings2">Sausage</label>
+
+        <input type="checkbox" id="toppings3" name="toppings[]" value="yes">
+        <label for="toppings3">Peppers</label>
+
+        <input type="checkbox" id="toppings4" name="toppings[]" value="yes">
+        <label for="toppings4">Onions</label>
+
+        <input type="checkbox" id="toppings5" name="toppings[]" value="yes">
+        <label for="toppings5">Anchovies</label>
+
+    </p>
+
+    <h3>Would you like to pick it up yourself, or have it delivered?</h3>
+    <label>
+        <input type="radio" name="pickupordeliver" value="pickup">
+        Pickup
+    </label>
+    <label>
+        <input type="radio" name="pickupordeliver" value="deliver">
+        Delivery
+    </label>
+    <br>
+    <br>
+    <label for="crusts"><h3>Select your favorite crust: </h3></label>
+    <select id="crusts" name="crusts">
+        <option selected>NY Pizzeria Style (Thin)</option>
+        <option>DEEP Dish</option>
+
+    </select>
+    <br>
+    <br>
+    <button>Submit</button>
+</form>
+
+</body>
+</html>
+
