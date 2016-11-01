@@ -1,0 +1,16 @@
+html {
+    background-image: url("pizzabackground.jpg");
+    background-position-x: 250px ;
+    background-position-y: 0px ;
+    background-repeat: no-repeat;
+    background-color: antiquewhite;
+    font-family: 'La Belle Aurore', cursive;
+}
+form {
+    margin-right: 1160px;
+}
+h1 {
+    margin-top: 0em;
+    font-size: 7em;
+    margin-bottom: 0em;
+}
