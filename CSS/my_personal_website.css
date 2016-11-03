@@ -1,31 +1,156 @@
-
+body {
+    background-image: url("../IMG/grafiti.jpg");
+    background-attachment: fixed;
+    color: black;
+}
+.sidebartab {
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: #05A6FF;
+}
 #selfport1 {
     width: 15%;
-    length: 15%;
+    height : 15%;
+}
+#babyphoto1 {
+    width:15%;
+    height:15%;
+}
+#apphoto{
+    ;
 }
 #introtext {
     text-align: center;
     font-family: 'Bangers', cursive;
-    font-size: 4em;
-}
-#introemail {
-    text-align: right;
-    font-family: 'Oswald', sans-serif;
     font-size: 2em;
-    font-weight: lighter;
-    margin-bottom:0;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #05A6FF;
 }
-#introphone {
+.contactinfo {
+    color: white;
     text-align: right;
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.5em;
-    font-weight: lighter;
-    margin-top: 0;
+    font-size: 150%;
+    margin-bottom:0;
+    margin-top:0;
 }
-body {
-    background-image: url("../IMG/grafiti.jpg");
-    color: rgba(5, 166, 255, 0.84);
-}
+
 #navbar {
     font-size: 2em;
+}
+.desaturate {
+    filter: grayscale(100%);
+}
+#sidebarsubtext {
+    font-size: 50%;
+    font-family: cursive;
+    color: #ffffff;
+}
+.c {
+    font-size: 15px;
+}
+
+.b {
+    padding: 70px;
+}
+
+.b > h1 {
+    margin-bottom: 10px;
+}
+
+.c {
+    background: #262626 ;
+    width: 350px;
+    height: 300px;
+    position: fixed;
+    bottom: -300px;
+    right: 20px;
+    transition: bottom 0.5s ease-in-out;
+}
+
+.c:target {
+    bottom: 0;
+}
+
+.cl {
+    text-decoration: none;
+    color: white;
+    background: #262626 ;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    display: block;
+    position: absolute;
+    top: -30px;
+    right: 20px;
+}
+
+.ct {
+    padding: 30px 30px 0;
+}
+
+.t {
+    margin-bottom: 10px;
+}
+
+.t > label {
+    font-size: 12px;
+    color: white;
+}
+
+.t > input[type="text"],
+.t > textarea {
+    font-size: 15px;
+    color: white;
+    background: #424242 ;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.t > input[type="text"]:focus,
+.t > textarea:focus {
+    color: black;
+    background: white;
+}
+
+.t > textarea {
+    resize: none;
+}
+
+.bt {
+    font-size: 15px;
+    color: black;
+    background: #e8e8e8 ;
+    display: inline-block;
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+.bt:active {
+    background: #f4f4f4 ;
+}
+
+.bt.p {
+    color: white;
+    background: #2974ff ;
+}
+
+.bt.p:active {
+    background: #3689ff ;
+}
+
+.a-r {
+    text-align: right;
+}
+
+@media (max-width: 767px) {
+    .c {
+        width: auto;
+        left: 40px;
+        right: 40px;
+    }
 }
