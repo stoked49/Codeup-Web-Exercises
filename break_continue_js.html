@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Break Continue Exercise</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        do {
+            var randomnumskip = Math.floor((Math.random()*50)+1);
+        }
+        while (randomnumskip % 2 == 0);
+        {
+            console.log("Number to skip is " + randomnumskip);
+            for (var i = 1; i <= 50; i += 2) {
+
+                if (i == randomnumskip) {
+                    console.log("Yikes skip the number! " + i);
+                    continue;
+                }
+                console.log("Here is an odd number: " + i);
+            }
+        }
+
+
+//        var randomnumskip = Math.floor((Math.random()*50)+1);
+//
+//        for (var i = 1; i <= 50; i += 1) {
+//            if (i % 2 == 0) {
+//                continue;
+//
+//            }
+//            if (randomnumskip == i) {
+//                console.log("Yikes skip that number! " + i)
+//                continue;
+//            }
+//            console.log("Here is an odd number: " + i)
+//
+//        }
+//        var i = 0;
+    </script>
+</body>
+</html>
