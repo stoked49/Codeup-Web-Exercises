@@ -53,10 +53,12 @@ console.log(newArrayFunction(1,30,3));
 // > getCount([6, 7, 4, 4])
 // {6: 1, 7: 1, 4: 2}
 
+
+
 (function () {
     // give me the unique values in an array as keys in an object
     // and their frequencies as the object's values
-    function uniqWithCount(array) {
+    function arrayToObject(array) {
         var counts = {};
         array.forEach(function(item) {
             counts[item] = 0;
@@ -67,7 +69,7 @@ console.log(newArrayFunction(1,30,3));
         });
         return counts;
     }
-    console.log(uniqWithCount([1,2,3,2,4,4,4,1]));
+    console.log(arrayToObject([1,2,3,2,4,4,4,1]));
 })();
 
 
