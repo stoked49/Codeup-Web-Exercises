@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator Exercise</title>
+    <link rel="stylesheet" href="CSS/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="CSS/calculator.css">
+
+
+</head>
+<body>
+    <div class="container text-center">
+        <div class="calc col-md-3 col-md-offset-4 text-center">
+                <!--<input id="leftOp" class="mainInputs" type="text" placeholder="1st input here">-->
+                <!--<input id="operator" class="mainInputs" type="text" placeholder="Math Performed">-->
+                <!--<input id="rightOp" class="mainInputs" type="text" placeholder="2nd input here">-->
+            <form name="btnPressed">
+                <input type="text" class="screen text-right" name="result" readonly>
+            </form>
+        <br>
+            <div class="btn-group-lg" role="group">
+                <button id="+" type="button" class="btn btn-warning opKey" value="+">+</button>
+                <button id="7" type="button" class="btn btn-info numberKeys" value="7">7</button>
+                <button id="8" type="button" class="btn btn-info numberKeys" value="8">8</button>
+                <button id="9" type="button" class="btn btn-info numberKeys" value="9">9</button>
+                <br>
+                <button id="-" type="button" class="btn btn-warning opKey" value="-">-</button>
+                <button id="4" type="button" class="btn btn-info numberKeys" value="4">4</button>
+                <button id="5" type="button" class="btn btn-info numberKeys" value="5">5</button>
+                <button id="6" type="button" class="btn btn-info numberKeys" value="6">6</button>
+                <br>
+                <button id="*" type="button" class="btn btn-warning opKey" onclick="myFunction(this.id)" value="*">*</button>
+                <button id="1" type="button" class="btn btn-info numberKeys" onclick="myFunction(this.id)" value="1">1</button>
+                <button id="2" type="button" class="btn btn-info numberKeys" onclick="myFunction(this.id)" value="2">2</button>
+                <button id="3" type="button" class="btn btn-info numberKeys" value="3">3</button>
+                <br>
+                <button id="divideOp" type="button" class="btn btn-warning opKey" value="/">/</button>
+                <button id="0" type="button" class="btn btn-info numberKeys" value="0">0</button>
+                <button id="equals" type="button" class="btn btn-success executeKeys" onclick="calculate()" value="=">=</button>
+                <button id="C" type="button" class="btn btn-danger executeKeys" onclick="clearScreen()" value="C">C</button>
+            </div>
+        </div>
+    </div>
+
+
+
+<script src="JS/calculator.js"></script>
+</body>
+</html>
