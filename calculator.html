@@ -11,35 +11,38 @@
 </head>
 <body>
     <div class="container text-center">
-        <div class="calc col-md-3 col-md-offset-4 text-center">
-                <!--<input id="leftOp" class="mainInputs" type="text" placeholder="1st input here">-->
-                <!--<input id="operator" class="mainInputs" type="text" placeholder="Math Performed">-->
-                <!--<input id="rightOp" class="mainInputs" type="text" placeholder="2nd input here">-->
-            <form name="btnPressed">
-                <input type="text" class="screen text-right" name="result" readonly>
-            </form>
+        <div class="row">
+        <div class="calc center-block text-center">
+                <input id="leftOp" class="mainInputs text-right" type="text" placeholder="1st input here">
+                <input id="operator" class="mainInputs" type="text">
+                <input id="rightOp" class="mainInputs" type="text" placeholder="2nd input here">
         <br>
             <div class="btn-group-lg" role="group">
-                <button id="+" type="button" class="btn btn-warning opKey" value="+">+</button>
-                <button id="7" type="button" class="btn btn-info numberKeys" value="7">7</button>
-                <button id="8" type="button" class="btn btn-info numberKeys" value="8">8</button>
-                <button id="9" type="button" class="btn btn-info numberKeys" value="9">9</button>
+                <button id="addKey" type="button" class="btn btn-warning opKey" value="+">+</button>
+                <button id="sevenKey" type="button" class="btn btn-info numberKeys" value="7">7</button>
+                <button id="eightKey" type="button" class="btn btn-info numberKeys" value="8">8</button>
+                <button id="nineKey" type="button" class="btn btn-info numberKeys" value="9">9</button>
+                <!--<button id="sqrtKey" type="button" class ="btn btn-secondary executeKeys" value=".">√</button>-->
                 <br>
-                <button id="-" type="button" class="btn btn-warning opKey" value="-">-</button>
-                <button id="4" type="button" class="btn btn-info numberKeys" value="4">4</button>
-                <button id="5" type="button" class="btn btn-info numberKeys" value="5">5</button>
-                <button id="6" type="button" class="btn btn-info numberKeys" value="6">6</button>
+                <button id="subKey" type="button" class="btn btn-warning opKey" value="-">-</button>
+                <button id="fourKey" type="button" class="btn btn-info numberKeys" value="4">4</button>
+                <button id="fiveKey" type="button" class="btn btn-info numberKeys" value="5">5</button>
+                <button id="sixKey" type="button" class="btn btn-info numberKeys" value="6">6</button>
+                <!--<button id="flipSign" type="button" class ="btn btn-secondary executeKeys" value="-">-/+</button>-->
                 <br>
-                <button id="*" type="button" class="btn btn-warning opKey" onclick="myFunction(this.id)" value="*">*</button>
-                <button id="1" type="button" class="btn btn-info numberKeys" onclick="myFunction(this.id)" value="1">1</button>
-                <button id="2" type="button" class="btn btn-info numberKeys" onclick="myFunction(this.id)" value="2">2</button>
-                <button id="3" type="button" class="btn btn-info numberKeys" value="3">3</button>
+                <button id="multKey" type="button" class="btn btn-warning opKey" value="*">*</button>
+                <button id="oneKey" type="button" class="btn btn-info numberKeys" value="1">1</button>
+                <button id="twoKey" type="button" class="btn btn-info numberKeys" value="2">2</button>
+                <button id="threeKey" type="button" class="btn btn-info numberKeys" value="3">3</button>
+                <!--<button id="percentKey" type="button" class ="btn btn-secondary executeKeys" value="％">％</button>-->
                 <br>
-                <button id="divideOp" type="button" class="btn btn-warning opKey" value="/">/</button>
-                <button id="0" type="button" class="btn btn-info numberKeys" value="0">0</button>
-                <button id="equals" type="button" class="btn btn-success executeKeys" onclick="calculate()" value="=">=</button>
-                <button id="C" type="button" class="btn btn-danger executeKeys" onclick="clearScreen()" value="C">C</button>
+                <button id="divKey" type="button" class="btn btn-warning opKey" value="/">/</button>
+                <button id="zeroKey" type="button" class="btn btn-info numberKeys" value="0">0</button>
+                <button id="equalKey" type="button" class="btn btn-success executeKeys" value="=">=</button>
+                <button id="cKey" type="button" class="btn btn-danger executeKeys" value="C">C</button>
+                <!--<button id="decKey" type="button" class ="btn btn-secondary executeKeys" value=".">.</button>-->
             </div>
+        </div>
         </div>
     </div>
 

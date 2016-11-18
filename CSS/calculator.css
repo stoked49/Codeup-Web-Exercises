@@ -11,10 +11,20 @@ background-color: darkgray;
     box-shadow: inset 1px 1px 50px #000;
 }
 .calc {
+    width: 400px;
     background-color: #3c3c3c;
     border-radius: 20px;
     padding: 20px;
     margin-top: 50px;
     margin-bottom: 50px;
     box-shadow: inset 1px 1px 50px #000;
+}
+#operator {
+    width: 20px;
+}
+.mainInputs {
+    background-color: navajowhite;
+}
+#flipSign {
+    font-size: small;
 }
