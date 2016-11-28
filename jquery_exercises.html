@@ -6,16 +6,22 @@
     <script src="JS/jquery-2.2.4.js"></script>
     <link rel="stylesheet" href="CSS/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <style>
-        .hidden {
-            display: none
+        .codeup {
+            border: 1px solid green;
+            color: yellow;
+            background-color: black;
+            font-size: large;
+            font-weight: bold;
+            letter-spacing: 5px;
+            margin-left: 100px;
         }
     </style>
 </head>
 <body>
 <div id="mainContainer" class="container">
-<h1 id="topHeader" class="text-center">Fear</h1>
-    <p id="subHeader" class="text-center">The path to the Dark Side...</p>
-    <ul id="darkSideList" class="text-warning">
+<h1 id="topHeader" class="text-center codeup">Fear</h1>
+    <p id="subHeader" class="text-center codeup">The path to the Dark Side...</p>
+    <ul id="darkSideList" class="codeup">
         <li>Fear leads to Anger</li>
         <li>Anger Leads to Hate</li>
         <li>Hate leads to Suffering</li>
@@ -25,6 +31,7 @@
     $(document).ready(function() {
         var contents = $("#topHeader");
         alert(contents.html());
+        $("#darkSideList").removeClass("codeup");
     });
 </script>
 
