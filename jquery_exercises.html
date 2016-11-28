@@ -6,10 +6,11 @@
     <script src="JS/jquery-2.2.4.js"></script>
     <link rel="stylesheet" href="CSS/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <style>
+        .highlight {
+            background-color: yellow;
+        }
         .codeup {
             border: 1px solid green;
-            color: yellow;
-            background-color: black;
             font-size: large;
             font-weight: bold;
             letter-spacing: 5px;
@@ -29,9 +30,13 @@
 </div>
 <script>
     $(document).ready(function() {
-        var contents = $("#topHeader");
-        alert(contents.html());
-        $("#darkSideList").removeClass("codeup");
+        var contentsH1 = $("h1").html();
+        alert(contentsH1);
+        $("li").css("font-size, 20px");
+        $("h1").addClass("highlight");
+        $("p").addClass("highlight");
+        $("li").addClass("highlight");
+
     });
 </script>
 
