@@ -6,6 +6,9 @@
     <script src="JS/jquery-2.2.4.js"></script>
     <link rel="stylesheet" href="CSS/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <style>
+        html {
+            background-color: black;
+        }
         .highlight {
             background-color: yellow;
         }
@@ -22,7 +25,7 @@
 <div id="mainContainer" class="container">
 <h1 id="topHeader" class="text-center codeup">Fear</h1>
     <p id="subHeader" class="text-center codeup">The path to the Dark Side...</p>
-    <ul id="darkSideList" class="codeup">
+    <ul id="darkSideList" class="codeup">How Dark Power manifests
         <li>Fear leads to Anger</li>
         <li>Anger Leads to Hate</li>
         <li>Hate leads to Suffering</li>
@@ -33,9 +36,9 @@
         var contentsH1 = $("h1").html();
         alert(contentsH1);
         $("li").css("font-size, 20px");
-        $("h1").addClass("highlight");
-        $("p").addClass("highlight");
-        $("li").addClass("highlight");
+        $("p, li, h1").addClass("highlight");
+        $("ul").children().css("color", "red");
+        $("li").parent().css("color", "orange");
 
     });
 </script>
