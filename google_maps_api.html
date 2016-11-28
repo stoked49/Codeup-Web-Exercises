@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Google Maps Exercise</title>
+    <link rel="stylesheet" href="CSS/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <style type="text/css">
+        #mapMain {
+            height: 100%;
+            outline: auto;
+        }
+        html, body {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<!--div for the map window-->
+<div id="mapMain" class="container"></div>
+<!--link for the maps.google api-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3jBFctTg7E6aRWz0YP-GWlds9EMCNLqo"></script>
+
+
+<script type="text/javascript">
+    (function () {
+        "use strict";
+        // new instance of geocoder object
+        var placesToEat = [
+            {
+                name: "Drago's",
+                address: "Hilton New Orleans Riverside, 2 Poydras St, New Orleans, LA 70130",
+                location: "29.9475997",
+                longitude: "-90.0634236"
+            },
+            {
+                name: "Illiano's Pizzeria",
+                address: "933 West Park Ave, Ocean Township, NJ 07712",
+                latitude: "40.2622138",
+                longitude: "-74.0507559"
+            },
+            {
+                name: "Flounder's Chowder House",
+                address: "Gulf Islands National Seashore, 800 Quietwater Beach Rd, Gulf Breeze, FL 32561",
+                latitude: "30.3340656",
+                longitude: "-87.1421807"
+            }
+        ];
+        var geocoder = new google.maps.Geocoder();
+        // initial map options
+        var mapOptions = {
+            // map initial zoom level
+            zoom: 15,
+            // map initial lat/long coordinates
+            center: {
+                lat: 29.9475997,
+                lng: -90.0634236
+            },
+            mapTypeId: "hybrid"
+        };
+        // render mapMain
+        var mapMain = new google.maps.Map(document.getElementById("mapMain"), mapOptions);
+        // Add the marker to our existing map
+        var oystersPic = {
+            url: "IMG/oysters.png",
+            scaledSize: new google.maps.Size(50, 50)
+        };
+placesToEat.forEach(function(elements, i) {
+        geocoder.geocode({"address": placesToEat[i].address}, function (results, status) {
+
+            // Check for a successful result
+            if (status == google.maps.GeocoderStatus.OK) {
+                // create marker
+                var marker = new google.maps.Marker({
+                    position: results[0].geometry.location,
+                    map: mapMain,
+                    animation: google.maps.Animation.DROP,
+                    icon: oystersPic
+                });
+            // Open the window using our map and marker
+                marker.addListener('click', function () {
+                    var infowindow = new google.maps.InfoWindow({
+                        content: contentString,
+                        maxWidth: 400
+                    });
+                    infowindow.open(mapMain, marker);
+                });
+            } else {
+
+                // show an error message with the status if our request fails
+                alert("Geocoding was not successful - STATUS: " + status)
+            }
+        });
+    });
+        // Create a new infoWindow object with content
+        var contentString = "<div id ='content' style='width:400px; background-color:pink;'>Drago's Oysters. The best</div>";
+    }()); //IIFE
+</script>
+
+</body>
+</html>
+
+
+

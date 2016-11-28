@@ -79,7 +79,10 @@ var clearDisplay = function() {
     zeroKey.addEventListener("click", inputToScreen);
     equalKey.addEventListener("click", inputToScreen);
     cKey.addEventListener("click", clearDisplay);
-
+    sqrtKey.addEventListener("click", inputToScreen);
+    flipSign.addEventListener("click", inputToScreen);
+    percentKey.addEventListener("click", inputToScreen);
+    decKey.addEventListener("click", inputToScreen);
 })();
 
 
