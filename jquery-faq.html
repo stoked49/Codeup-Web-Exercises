@@ -16,27 +16,67 @@
 <body>
 <dl>
     <dt><b><em>10</em> Astonishing Facts about National Parks</b></dt>
-    <button id="showText" type="button" class="btn">Englighten</button>
+    <button id="showTextButton" type="button" class="btn">Englighten</button>
     <dt>What is the worlds first national park?</dt>
-    <dd class="invisible">The world’s first national park, Yellowstone, was created in 1872 by President Ulysses S. Grant.</dd>
+    <dd>The world’s first national park, Yellowstone, was created in 1872 by President Ulysses S. Grant.</dd>
     <dt>What is the world's smallest national park?</dt>
-    <dd class="invisible">The smallest national park is Hot Springs National Park in Arkansas coming in at about 5,500 acres.</dd>
+    <dd>The smallest national park is Hot Springs National Park in Arkansas coming in at about 5,500 acres.</dd>
     <dt>What is the largest national park?</dt>
-    <dd class="invisible">The largest park is Wrangell-St. Elias National Park and Preserve, Alaska. According to the National Park Service, the park spans 13.2 million acres, an area bigger than Switzerland and the 9 of the smallest states. It also covers three climate zones.</dd>
+    <dd>The largest park is Wrangell-St. Elias National Park and Preserve, Alaska. According to the National Park Service, the park spans 13.2 million acres, an area bigger than Switzerland and the 9 of the smallest states. It also covers three climate zones.</dd>
     <dt>Do all states have a national park?</dt>
-    <dd class="invisible">Only one state in the country is not lucky enough to currently have either a national park or national monument. It is actually the country’s first state, Delaware. Poor Delaware.</dd>
+    <dd>Only one state in the country is not lucky enough to currently have either a national park or national monument. It is actually the country’s first state, Delaware. Poor Delaware.</dd>
     <dt>What are some facts about Death Valley National Park</dt>
-    <dd class="invisible">Death Valley National Park, which has the lowest elevation in the U.S. at 282 feet below sea level, is only 76 miles from Mount Whitney, the highest point in the contiguous U.S. at 14,505 feet.</dd>
-    <dd class="invisible">The Florida Everglades is the only true tropical forest in the northern hemisphere. Because of this it is home to plants and animals you can’t find anywhere else, including the Florida Panther and twenty species of orchid.</dd>
-    <dd class="invisible"> Crater Lake, the U.S.’ deepest lake and seventh deepest in the world, took 250 years of rain and snow accumulation to reach its current water level.</dd>
-    <dd class="invisible">The Yellowstone Caldera, in Yellowstone National Park, is a super volcano that is responsible for three of the world’s six biggest volcano eruptions. It is on pace to blow about 100,000 years from now.</dd>
-    <dd class="invisible">Sequoia National Park, California is home to the largest living single-stem tree in the world - the wonderfully named General Sherman. The tree is approximately 275ft (84m) tall and weighs approximately 1,900 metric tonnes.</dd>
-    <dd class="invisible">The longest cave system in the world is at Mammoth Cave National Park, Kentucky. Currently, there is more than 3454 miles of cave mapped, with more to come. The largest “room” in the portion of the cave system that has been discovered is two acres in size.</dd>
+    <dd>Death Valley National Park, which has the lowest elevation in the U.S. at 282 feet below sea level, is only 76 miles from Mount Whitney, the highest point in the contiguous U.S. at 14,505 feet.</dd>
+    <dt>What's so special about the Florida Everglades?</dt>
+    <dd>The Florida Everglades is the only true tropical forest in the northern hemisphere. Because of this it is home to plants and animals you can’t find anywhere else, including the Florida Panther and twenty species of orchid.</dd>
+    <dt>What's the deepest lake in the U.S.?</dt>
+    <dd> Crater Lake, the U.S.’ deepest lake and seventh deepest in the world, took 250 years of rain and snow accumulation to reach its current water level.</dd>
+    <dt>Are there any volcanos at Yellowstone National Park?</dt>
+    <dd>The Yellowstone Caldera, in Yellowstone National Park, is a super volcano that is responsible for three of the world’s six biggest volcano eruptions. It is on pace to blow about 100,000 years from now.</dd>
+    <dt>This is just a fun fact since I love Sequoia Trees</dt>
+    <dd>Sequoia National Park, California is home to the largest living single-stem tree in the world - the wonderfully named General Sherman. The tree is approximately 275ft (84m) tall and weighs approximately 1,900 metric tonnes.</dd>
+    <dt>Are some caves National Parks?</dt>
+    <dd>The longest cave system in the world is at Mammoth Cave National Park, Kentucky. Currently, there is more than 3454 miles of cave mapped, with more to come. The largest “room” in the portion of the cave system that has been discovered is two acres in size.</dd>
 </dl>
+<h3>Grand Canyon National Park</h3>
+<ul id="np1">
+    <li>It is one of the seven wonders of the natural world.</li>
+    <li>The Grand Canyon is 277 miles (446 kilometres) in length.</li>
+    <li>At its widest point the Grand Canyon stretches 18 miles (29 kilometres) across.</li>
+    <li>The Grand Canyon is around 6000 (1800 metres) feet deep.</li>
+</ul>
+<h3>Redwood National Park</h3>
+<ul id="np2">
+    <li>A relative of the famous sequoia, the coastal redwood grows to spectacular heights, making it the tallest tree on earth, with heights of 250 feet being fairly commonplace and 350 feet not unheard of. </li>
+    <li>Coastal redwoods have been known to live as long as 2,000 years, although a life of around 500 years is more common.</li>
+    <li>Redwood National Park is the home for many wild lions, bears and elk.  </li>
+    <li>The earliest redwoods showed up on Earth shortly after the dinosaurs—and before flowers, birds, spiders... and, of course, humans. (More below.) Photo by Miguel Vieira / Creative Commons.</li>
+</ul>
+<h3>Everglades National Park</h3>
+<ul id="np3">
+    <li>Home of fourteen endangered and nine threatened species.</li>
+    <li>Most significant breeding grounds for tropical wading birds in North America.</li>
+    <li>Only subtropical preserve on the North American continent</li>
+    <li>One out of every three Floridians (8 million people) rely on the Everglades for their water supply.</li>
+</ul>
+
 <script>
     "use strict";
-    $("#showText").click(function() {
-        $("dd").toggleClass('invisible');
+    $(document).ready(function() {
+        $("#np1").children().first().css("font-weight", "bold");
+        $("#np2").children().first().css("font-weight", "bold");
+        $("#np3").children().first().css("font-weight", "bold");
+        $("li").addClass('invisible');
+        $("dd").addClass('invisible');
+        $("#showTextButton").click(function () {
+            $("dd").toggleClass("invisible");
+            $("li").toggleClass("invisible");
+            $("dd").css("background-color", "green");
+            $("li").css("background-color", "green");
+        });
+        $("li").click(function () {
+            $(this).parent().addClass("invisible");
+        })
     });
 </script>
 </body>
