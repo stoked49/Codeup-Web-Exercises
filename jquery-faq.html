@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery FAQ</title>
+    <script src="JS/jquery-2.2.4.js"></script>
+    <style>
+        .invisible {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<dl>
+    <dt><b><em>10</em> Astonishing Facts about National Parks</b></dt>
+    <button id="showText" type="button" class="btn">Englighten</button>
+    <dd class="invisible">The world’s first national park, Yellowstone, was created in 1872 by President Ulysses S. Grant.</dd>
+    <dd class="invisible">The smallest national park is Hot Springs National Park in Arkansas coming in at about 5,500 acres.</dd>
+    <dd class="invisible">The largest park is Wrangell-St. Elias National Park and Preserve, Alaska. According to the National Park Service, the park spans 13.2 million acres, an area bigger than Switzerland and the 9 of the smallest states. It also covers three climate zones.</dd>
+    <dd class="invisible">Only one state in the country is not lucky enough to currently have either a national park or national monument. It is actually the country’s first state, Delaware. Poor Delaware.</dd>
+    <dd class="invisible">Death Valley National Park, which has the lowest elevation in the U.S. at 282 feet below sea level, is only 76 miles from Mount Whitney, the highest point in the contiguous U.S. at 14,505 feet.</dd>
+    <dd class="invisible">The Florida Everglades is the only true tropical forest in the northern hemisphere. Because of this it is home to plants and animals you can’t find anywhere else, including the Florida Panther and twenty species of orchid.</dd>
+    <dd class="invisible"> Crater Lake, the U.S.’ deepest lake and seventh deepest in the world, took 250 years of rain and snow accumulation to reach its current water level.</dd>
+    <dd class="invisible">The Yellowstone Caldera, in Yellowstone National Park, is a super volcano that is responsible for three of the world’s six biggest volcano eruptions. It is on pace to blow about 100,000 years from now.</dd>
+    <dd class="invisible">Sequoia National Park, California is home to the largest living single-stem tree in the world - the wonderfully named General Sherman. The tree is approximately 275ft (84m) tall and weighs approximately 1,900 metric tonnes.</dd>
+    <dd class="invisible">The longest cave system in the world is at Mammoth Cave National Park, Kentucky. Currently, there is more than 3454 miles of cave mapped, with more to come. The largest “room” in the portion of the cave system that has been discovered is two acres in size.</dd>
+</dl>
+<script>
+    "use strict";
+    $("#showText").click(function() {
+        $("dd").toggleClass('invisible');
+    });
+</script>
+</body>
+</html>
