@@ -38,21 +38,21 @@
     <dt>Are some caves National Parks?</dt>
     <dd>The longest cave system in the world is at Mammoth Cave National Park, Kentucky. Currently, there is more than 3454 miles of cave mapped, with more to come. The largest “room” in the portion of the cave system that has been discovered is two acres in size.</dd>
 </dl>
-<h3>Grand Canyon National Park</h3>
+<h3 id="h31">Grand Canyon National Park</h3>
 <ul id="np1">
     <li>It is one of the seven wonders of the natural world.</li>
     <li>The Grand Canyon is 277 miles (446 kilometres) in length.</li>
     <li>At its widest point the Grand Canyon stretches 18 miles (29 kilometres) across.</li>
     <li>The Grand Canyon is around 6000 (1800 metres) feet deep.</li>
 </ul>
-<h3>Redwood National Park</h3>
+<h3 id="h32">Redwood National Park</h3>
 <ul id="np2">
     <li>A relative of the famous sequoia, the coastal redwood grows to spectacular heights, making it the tallest tree on earth, with heights of 250 feet being fairly commonplace and 350 feet not unheard of. </li>
     <li>Coastal redwoods have been known to live as long as 2,000 years, although a life of around 500 years is more common.</li>
     <li>Redwood National Park is the home for many wild lions, bears and elk.  </li>
     <li>The earliest redwoods showed up on Earth shortly after the dinosaurs—and before flowers, birds, spiders... and, of course, humans. (More below.) Photo by Miguel Vieira / Creative Commons.</li>
 </ul>
-<h3>Everglades National Park</h3>
+<h3 id="h33">Everglades National Park</h3>
 <ul id="np3">
     <li>Home of fourteen endangered and nine threatened species.</li>
     <li>Most significant breeding grounds for tropical wading birds in North America.</li>
@@ -69,14 +69,20 @@
         $("li").addClass('invisible');
         $("dd").addClass('invisible');
         $("#showTextButton").click(function () {
-            $("dd").toggle();
+            $("dd").slideToggle();
             $("li").toggle();
             $("dd").css("background-color", "green");
             $("li").css("background-color", "green");
         });
-        $("li").click(function () {
-            $(this).parent().hide();
-        })
+        $("#h31").click(function () {
+            $("#np1").children().slideToggle();
+        });
+        $("#h32").click(function () {
+            $("#np2").children().slideToggle();
+        });
+        $("#h33").click(function () {
+            $("#np3").children().slideToggle();
+        });
     });
 </script>
 </body>
