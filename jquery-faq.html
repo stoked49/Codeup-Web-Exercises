@@ -69,13 +69,13 @@
         $("li").addClass('invisible');
         $("dd").addClass('invisible');
         $("#showTextButton").click(function () {
-            $("dd").toggleClass("invisible");
-            $("li").toggleClass("invisible");
+            $("dd").toggle();
+            $("li").toggle();
             $("dd").css("background-color", "green");
             $("li").css("background-color", "green");
         });
         $("li").click(function () {
-            $(this).parent().addClass("invisible");
+            $(this).parent().hide();
         })
     });
 </script>
