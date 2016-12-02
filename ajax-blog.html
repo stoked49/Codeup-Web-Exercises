@@ -5,32 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
     <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
     <script src="js/jquery-2.2.4.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/ajax-blog.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 
 
     <title>Ajax Blog</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="jumbotron-narrow.css" rel="stylesheet">
 
 
 </head>
 
 <body>
+<iframe src="http://free.timeanddate.com/clock/i5hhuoqk/n403/fcfff/tct/pct/tt0/tw1/tm1" frameborder="0" width="254" height="18" allowTransparency="true" class="affix"></iframe>
+
 
 <div class="container">
     <div class="header clearfix">
         <nav>
-            <ul class="nav nav-pills pull-right">
-                <li role="presentation" class="active"><a href="#">Home</a></li>
+            <ul class="nav nav-pills pull-right"    >
+                <li role="presentation" class=""><a href="">Home</a></li>
                 <li role="presentation"><a href="#">About</a></li>
                 <li role="presentation"><a href="#">Contact</a></li>
             </ul>
@@ -38,22 +34,27 @@
         <h3 class="text-muted">becuz codeup</h3>
     </div>
 
-    <div class="jumbotron">
-        <h1>Digital Transformation</h1>
-        <p class="lead">You won't see the "b" word here.  This is a digital journal of my thoughts. I will always be a student of technology and staying knowledgeable on industry trends is paramount.  Technology is progress and like time...progress never stops.  Adapt with it or become extinct.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">The Dark Side</a></p>
+    <div id="greyBox" class="jumbotron">
+        <h1>Digital Journey</h1>
+        <p class="lead">I'm going to avoid calling this a blog. This is a digital journal of my thoughts. I'll be sharing my opinions, stories, memories in a way that will focus on tech.  I will always be a
+            student of technology and staying knowledgeable on industry trends is == survival. Technology is progress and
+            like time...progress never stops. Adapt with it or become extinct.  This is my way of keeping both of us technologically relevant</p>
+
+        <!--btn commented out to find a use for it later-->
+        <!--<p><a class="btn btn-lg btn-window" href="#" role="button">The Dark Side</a></p>-->
+
     </div>
 
-    <div id="posts">
+<div id="posts" class="rowLimit">
 
     </div>
     <div class="row marketing">
-        <div class="col-lg-6">
+        <div id="posts2" class="col-lg-6">
             <h4>DigiJournal Entry #1</h4>
             <p id="dje1"></p>
         </div>
 
-        <div class="col-lg-6">
+        <div id="posts3" class="col-lg-6">
             <h4>DigiJournal Entry #2</h4>
             <p id="dje2"></p>
         </div>
@@ -66,20 +67,21 @@
 </div> <!-- /container -->
 
 <script>
-    (function() {
+    (function () {
         "use strict";
         // Assign to variable
         var blogEntries = $.get("data/blog.json");
         var rows;
-        blogEntries.done(function(data) {
+        blogEntries.done(function (data) {
             console.log("It worked");
-        data.forEach(function (element){
-            rows += element.title
-                    + element.content
-                    + element.catagories
-                    + element.date
-        });
+            data.forEach(function (element) {
+                rows += "<h1>" + element.title + "</h1>" +
+                    "<h5>" + "Topics: " + element.categories + "</h5>" +
+                    "<p>" + element.content + "</p>" +
+                    "<h4>" + element.date + "</h4>"
+            });
             $("#posts").html(rows);
+//            $("#posts3").html(rows);
         });
     })();
 </script>
