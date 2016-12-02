@@ -31,7 +31,8 @@
     console.log(inventory);
     $("#btnRefresh").click(function() {
         inventory = $.get("data/inventory.json");
-
+        $(".table").fadeOut();
+        $(".table").fadeIn();
         populate(inventory);
     });
 
