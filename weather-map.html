@@ -26,10 +26,11 @@
     <h1>Weather Application</h1>
     <h3 id="weatherLocation"></h3>
     <h5 id="weatherDescription"></h5>
-    <div id="day1">
+    <div id="day">
     </div>
     </div>
 </div>
+<button type="button">Submit</button>
 <script>
     (function (){
     var weatherData = $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
@@ -44,7 +45,7 @@
         data.list.forEach(function(object, i){
 
         var day = moment.unix(object.dt);
-
+        console.log(data)
         console.log(data.list);
 
         var columns;
@@ -52,18 +53,18 @@
 
                 columns = "<div class='col-lg-4 pretty'>"
                     + "<h5>Day " + (i + 1) + ": " + day.format("dddd, MMM-Do-YYYY") + "</h5>"
-                    + "<p>" + object.weather[0].description + "</p>"
-                    + "<p>High of " + object.temp.max + " / Low of " + object.temp.min + "</p>"
+                    + "<h4>" + object.temp.max.toFixed(0) + " / " + object.temp.min.toFixed(0) + "</h4>"
+                    + "<img src=" + "http://openweathermap.org/img/w/" + object.weather[0].icon + ".png>"
+                    + "<p><strong>" + object.weather[0].main + ": " + "</strong>"
+                    + object.weather[0].description + "</p>"
                     + "<p>Humidity: " + object.humidity + "</p>"
                     + "<p>Wind: " + object.speed + "</p>"
                     + "<p>Pressure: " + object.pressure + "</p>"
                     + "</div>";
-                $("#day1").append(columns);
+                $("#day").append(columns);
 
            console.log(data.list);
            console.log(city);
-      //   console.log(day.format("dddd, MMM-DD-YYYY"));
-      //  return data;
 
     });
     });
