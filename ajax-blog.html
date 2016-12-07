@@ -75,7 +75,7 @@
         blogEntries.done(function (data) {
             console.log("It worked");
             data.forEach(function (element) {
-                rows += "<h1>" + element.title + "</h1>" +
+                rows = "<h1>" + element.title + "</h1>" +
                     "<h5>" + "Topics: " + element.categories + "</h5>" +
                     "<p>" + element.content + "</p>" +
                     "<h4>" + element.date + "</h4>"

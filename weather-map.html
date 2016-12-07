@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map API</title>
+    <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="js/jquery-2.2.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url("img/weatherPicture.jpg");
+            color: #0f0f0f;
+            padding-top: 200px;
+        }
+        .pretty{
+            background-color: rgba(226, 135, 128, 0.45);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+    <h1>Weather Application</h1>
+    <h3 id="weatherLocation"></h3>
+    <h5 id="weatherDescription"></h5>
+    <div id="day1">
+    </div>
+    </div>
+</div>
+<script>
+    (function (){
+    var weatherData = $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+        APPID: "f55abc25005d6e40ce57f84187a6c6e5",
+        q: "San Antonio, Tx",
+        units: "imperial",
+        cnt: 3
+    });
+    weatherData.done(function(data) {
+        var city = data.city.name;
+
+        data.list.forEach(function(object, i){
+
+        var day = moment.unix(object.dt);
+
+        console.log(data.list);
+
+        var columns;
+
+
+                columns = "<div class='col-lg-4 pretty'>"
+                    + "<h5>Day " + (i + 1) + ": " + day.format("dddd, MMM-Do-YYYY") + "</h5>"
+                    + "<p>" + object.weather[0].description + "</p>"
+                    + "<p>High of " + object.temp.max + " / Low of " + object.temp.min + "</p>"
+                    + "<p>Humidity: " + object.humidity + "</p>"
+                    + "<p>Wind: " + object.speed + "</p>"
+                    + "<p>Pressure: " + object.pressure + "</p>"
+                    + "</div>";
+                $("#day1").append(columns);
+
+           console.log(data.list);
+           console.log(city);
+      //   console.log(day.format("dddd, MMM-DD-YYYY"));
+      //  return data;
+
+    });
+    });
+    })();
+</script>
+</body>
+</html>
