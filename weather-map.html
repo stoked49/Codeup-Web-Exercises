@@ -4,71 +4,34 @@
     <meta charset="UTF-8">
     <title>Weather Map API</title>
     <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <!-- Javascript Link -->
     <script src="js/jquery-2.2.4.js"></script>
+    <!-- moment.js link for time keeping -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
+    <!-- Javascript Bootstrap link -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
-    <style>
-        body {
-            background-image: url("img/weatherPicture.jpg");
-            color: #0f0f0f;
-            padding-top: 200px;
-        }
-        .pretty{
-            background-color: rgba(226, 135, 128, 0.45);
-        }
-    </style>
+    <!-- Google Maps API link -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3jBFctTg7E6aRWz0YP-GWlds9EMCNLqo"></script>
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="css/weather-map.css">
+
 </head>
 <body>
 <div class="container">
     <div class="row">
-    <h1>Weather Application</h1>
-    <h3 id="weatherLocation"></h3>
-    <h5 id="weatherDescription"></h5>
-    <div id="day">
-    </div>
+        <h1>Weather Application</h1>
+        <h3 id="weatherLocation"></h3>
+        <h5 id="weatherDescription"></h5>
+        <div id="day">
+        </div>
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <div id="mapMain" class="container"></div>
     </div>
 </div>
-<button type="button">Submit</button>
-<script>
-    (function (){
-    var weatherData = $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
-        APPID: "f55abc25005d6e40ce57f84187a6c6e5",
-        q: "San Antonio, Tx",
-        units: "imperial",
-        cnt: 3
-    });
-    weatherData.done(function(data) {
-        var city = data.city.name;
-
-        data.list.forEach(function(object, i){
-
-        var day = moment.unix(object.dt);
-        console.log(data)
-        console.log(data.list);
-
-        var columns;
-
-
-                columns = "<div class='col-lg-4 pretty'>"
-                    + "<h5>Day " + (i + 1) + ": " + day.format("dddd, MMM-Do-YYYY") + "</h5>"
-                    + "<h4>" + object.temp.max.toFixed(0) + " / " + object.temp.min.toFixed(0) + "</h4>"
-                    + "<img src=" + "http://openweathermap.org/img/w/" + object.weather[0].icon + ".png>"
-                    + "<p><strong>" + object.weather[0].main + ": " + "</strong>"
-                    + object.weather[0].description + "</p>"
-                    + "<p>Humidity: " + object.humidity + "</p>"
-                    + "<p>Wind: " + object.speed + "</p>"
-                    + "<p>Pressure: " + object.pressure + "</p>"
-                    + "</div>";
-                $("#day").append(columns);
-
-           console.log(data.list);
-           console.log(city);
-
-    });
-    });
-    })();
+<br><br><br>
+<script src="js/weather-map.js">
 </script>
 </body>
 </html>
